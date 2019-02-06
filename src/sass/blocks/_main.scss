@@ -8,153 +8,121 @@ body {
 	font-family: $font;
   min-width: 320px;
   min-height: 400px;
-  color: $grey-light;
-  line-height: 1.3;
+  color: $grey;
+  line-height: 1.7;
   font-size: 14px;
+  background-color: $white;
+}  
+
+h2 { 
+    font-size: 24px;
+    font-weight: 600;
 }
 
 p {
-  margin-bottom: .7rem;
-  font-family: $light-font;  
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-  }
+  font-size: 14px;
+  margin-bottom: 30px;
+  span,
+  a {
+    color: $accent;
+  } 
 }
-
-img {
-  max-width: 100%;
-  vertical-align: top;
-}
-
-h2, h3, h4 {
-  margin: 10px 0;
-  font-weight: 800; 
-  color: $grey-dark;
-  @media screen and (min-width: 768px) {
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 40px; 
-  @media screen and (min-width: 768px) {
-    font-size: 52px; 
-  }
-} 
-
-h3 {  
-  font-size: 26px;  
-  @media screen and (min-width: 768px) {
-    font-size: 30px; 
-  }
-}
-
-h4 { 
-  font-size: 18px; 
-  @media screen and (min-width: 768px) {
-    font-size: 22px; 
-  }
-}
-
-ul { 
-  list-style-type: none;
-}
-
-::placeholder {
-	color: lighten($white, 10%);
-} 
 
 .btn {
     display: inline-block;
-    padding: 20px 35px;
+    padding: 20px 60px;
     border-radius: 3px;
+    border: 1px solid $black;
     line-height: 1em;
-    text-transform: uppercase;
-    outline: none;
-    font-size: 14px;
+    text-transform: uppercase;  
     font-weight: 800;
-    color: $white;
-    border: none;
-    text-decoration: none;
-    transition: background-color .4s, border-bottom-color .4s; 
-    &-brown {
-    	background-color: $brown-light;
-    	border-bottom: 5px solid $brown;
-      &:hover,
-      &:active {
-        background-color: darken($brown-light, 10%);
-        border-bottom-color: darken($brown, 10%);
+    color: $black; 
+    text-decoration: none; 
+    background-color: transparent;
+    position: relative;   
+    &:after {
+        content: "order";
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        border: 1px solid $accent;
+        border-radius: 3px;
+        background-color: $accent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .25s, visibility .25s;
+    }
+    &:hover { 
+      &:after {
+        opacity: 1;
+        visibility: visible;
       }
     }
 }
 
-.loader {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 99999;
-    background-color: $brown-light;
-    opacity: 1;
-    transition: all 1s;
-
-    &.out {
-      opacity: 0;
-      visibility: hidden;
-    }
-}
-
 .section {
-  padding: 30px 0; 
-  @media screen and (min-width: 768px) {
-    padding: 70px 0;
-  }
-  h3 {
-    font-family: Montserrat,sans-serif;
-  }
-  p {
-    margin-bottom: 2rem;
-  }
-  &-top {
-    padding: 30px 0 0;
-    @media screen and (min-width: 768px) {
-      padding: 70px 0 0;
-    }
-  }
+    padding-top: 70px;
 } 
 
-.section-center {
-  margin: 0 auto;
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    span {
+      color: $accent;
+    }
 }
 
-.bg-white {
-  background-color: $white;
+.text-bold {
+  font-weight: 600;
+} 
+
+.block-center {
+   margin: 0 auto;
 }
 
-.bg-light {
-  background-color: $grey-lighten;
+.goals-item {
+     font-size: 50px;
+     text-align: center;
+     .goals-icon { 
+       color: $accent;
+     }
 }
 
-.text-center {
+.features-icon {
+    font-size: 140px;
+    line-height: 1;
+    text-align: center;
+    color: $accent;
+} 
+
+.services-btn {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 90px;
+}
+
+.go-top {
+  position: absolute;
+  right: 20px;
+  bottom: 4px;
   text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.flex-align-center {
-  align-items: center;
-}
-
-.p-0 {
-  padding: 0;
-}
-
-.m-0 {
-  margin: 0;
+  line-height: 40px; 
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $accent;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-decoration: none;
+    color: $white;
+  }
 }
